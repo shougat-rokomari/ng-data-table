@@ -1,3 +1,20 @@
-<p>
-  data-table works!
-</p>
+<table>
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Web-site</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users">
+    <td>{{user.id}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.phone}}</td>
+    <td>{{user.website}}</td>
+  </tr>
+  </tbody>
+</table>
