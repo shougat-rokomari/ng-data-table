@@ -3,5 +3,10 @@
   <h1>
     Welcome to {{title}}!
   </h1>
-<app-data-table></app-data-table>
+  <app-data-table
+    [url]="'http://localhost/api/users.php'"
+    [pageSize]="10"
+  >
+    Loading..........
+  </app-data-table>
 </div>

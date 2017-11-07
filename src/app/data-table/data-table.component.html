@@ -1,20 +1,24 @@
-<table>
-  <thead>
-  <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th>Web-site</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let user of users">
-    <td>{{user.id}}</td>
-    <td>{{user.name}}</td>
-    <td>{{user.email}}</td>
-    <td>{{user.phone}}</td>
-    <td>{{user.website}}</td>
-  </tr>
-  </tbody>
-</table>
+<div *ngIf="loading">
+  Loading ......................
+</div>
+<div *ngIf="!loading">
+  <table>
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.phone}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <button (click)="loadNext()">Next</button>
+</div>
