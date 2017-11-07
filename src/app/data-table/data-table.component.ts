@@ -26,9 +26,14 @@ export class DataTableComponent implements OnInit {
   }
 
   loadNext() {
-    this.http.get<User[]>(this.url + '?page=' + this.currentPage + '&size=' + this.pageSize).subscribe(data => {
+    this.currentPage++;
+    this.loadPage(this.currentPage);
+  }
+
+  loadPage(page: number) {
+    this.http.get<User[]>(this.url + '?page=' + page + '&size=' + this.pageSize).subscribe(data => {
       this.users = data;
-      this.currentPage++;
+      this.currentPage = page;
     });
   }
 }
