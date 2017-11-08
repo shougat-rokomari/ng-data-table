@@ -20,10 +20,14 @@
     </tr>
     </tbody>
   </table>
-  <button (click)="loadNext()">Next</button>
   <ul>
-    <li><button (click)="loadPage(1)">1</button></li>
-    <li><button (click)="loadPage(2)">2</button></li>
-    <li><button (click)="loadPage(3)">3</button></li>
+    <li style="float: left; list-style: none;"><button (click)="loadPage(1)">First</button></li>
+    <li style="float: left; list-style: none;"><button (click)="loadPrevious()">Previous</button></li>
+    <li *ngFor="let i of pages" style="float: left; list-style: none;">
+      <button (click)="loadPage(i)" *ngIf="i == currentPage" style="background: #72ff6a">{{i}}</button>
+      <button (click)="loadPage(i)" *ngIf="i != currentPage">{{i}}</button>
+    </li>
+    <li style="float: left; list-style: none;"><button (click)="loadNext()">Next</button></li>
+    <li style="float: left; list-style: none;"><button (click)="loadPage(lastPage)">Last</button></li>
   </ul>
 </div>
