@@ -28,7 +28,6 @@ export class DataTableComponent implements OnInit {
           for (let i = 1; i <= this.lastPage; i++) {
             this.pages.push(i);
           }
-          this.currentPage++;
           this.loading = false;
         });
     }, 1000);
