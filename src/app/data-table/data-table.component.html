@@ -1,7 +1,7 @@
 <div *ngIf="loading">
   Loading ......................
 </div>
-<div *ngIf="!loading">
+<div>
   <table>
     <thead>
     <tr>
@@ -30,4 +30,10 @@
     <li style="float: left; list-style: none;"><button (click)="loadNext()">Next</button></li>
     <li style="float: left; list-style: none;"><button (click)="loadPage(lastPage)">Last</button></li>
   </ul>
+  Show:
+  <select (change)="setPageSize($event.target.value)">
+    <option value="10">10</option>
+    <option value="15">15</option>
+    <option value="20">20</option>
+  </select>
 </div>
